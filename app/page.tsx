@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroHomePage/>
       <Hero />
-      <ScrollImageSequenceDemo />
+      {/* <ScrollImageSequenceDemo /> */}
       <PricingSection />
       <WhyChooseSection />
       <CTASection />
