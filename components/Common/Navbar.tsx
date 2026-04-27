@@ -5,10 +5,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/utils/config";
+import { useCart } from "@/contexts/CartContext";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0d0d0d]/90 backdrop-blur-md border-b border-white/10">
@@ -51,10 +53,11 @@ export default function Navbar() {
             aria-label="Cart"
           >
             <ShoppingCart size={18} className="text-white/70" />
-            {/* Badge — swap 0 with real cart count later */}
-            <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-              0
-            </span>
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold min-w-4 h-4 px-1 rounded-full flex items-center justify-center animate-scale-in">
+                {totalItems > 99 ? "99+" : totalItems}
+              </span>
+            )}
           </Link>
 
           {/* Mobile menu toggle */}
