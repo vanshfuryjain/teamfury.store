@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import AboutHero from "@/components/about/AboutHero";
 import AboutWhySection from "@/components/about/AboutWhySection";
-import Navbar from "@/components/Common/Navbar";
 
 export const metadata: Metadata = {
   title: "About Us | TEAM FURY",
@@ -11,8 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#0d0d0d] text-white font-sans">
-      <Navbar />
+    <div className="font-sans">
       <AboutHero />
       <AboutWhySection />
     </div>
