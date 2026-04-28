@@ -42,4 +42,3 @@ body {
 .animate-scale-in       { animation: scale-in 0.3s ease both; }
 .animate-scroll-dot     { animation: scroll-dot 1.6s ease-in-out infinite; }
 .animate-glow           { animation: glow-pulse 2.5s ease-in-out infinite; }
-/* Comment */
